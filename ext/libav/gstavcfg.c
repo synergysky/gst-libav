@@ -227,7 +227,7 @@ install_opts (GObjectClass * gobject_class, const AVClass ** obj, guint prop_id,
 
   while ((opt = av_opt_next (obj, opt))) {
     GParamSpec *pspec = NULL;
-    AVOptionRanges *r;
+    AVOptionRanges *r = NULL;
     gdouble min = G_MINDOUBLE;
     gdouble max = G_MAXDOUBLE;
     gchar *help;
@@ -257,6 +257,7 @@ install_opts (GObjectClass * gobject_class, const AVClass ** obj, guint prop_id,
       min = r->range[0]->value_min;
       max = r->range[0]->value_max;
     }
+    av_opt_freep_ranges (&r);
 
     help = g_strdup_printf ("%s%s", opt->help, extra_help);
 
