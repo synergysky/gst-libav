@@ -1,3 +1,9 @@
+gst-libav1.0 (1.14.0+20210303pexip-1) pexip-bullseye; urgency=medium
+
+  * Build for pexip-bullseye.
+
+ -- Daniel Pocock <daniel@pocock.pro>  Thu, 09 Sep 2021 20:17:30 +0200
+
 gst-libav1.0 (1.14.0-1) unstable; urgency=medium
 
   * New upstream stable release.
